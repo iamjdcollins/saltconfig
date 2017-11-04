@@ -1,0 +1,18 @@
+[Unit]
+Description=www.slcschools.org gunicorn daemon
+After=network.target
+
+[Service]
+PIDFile=/run/gunicorn/gunicorn_www_slcschools_org.pid
+User=nginx
+Group=nginx
+WorkingDirectory=/srv/django/www_slcschools_org
+EnvironmentFile=/etc/environment
+Environment="PATH=/srv/virtualenv/www_slcschools_org/bin/"
+ExecStart=/srv/virtualenv/www_slcschools_org/bin/gunicorn --name www_slcschools_org --workers 5 --pid /run/gunicorn/gunicorn_www_slcschools_org.pid --bind unix:/run/gunicorn/gunicorn_www_slcschools_org.sock config.wsgi
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
