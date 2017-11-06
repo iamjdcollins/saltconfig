@@ -3,7 +3,7 @@ www_slcschools_org_database:
     - name: www_slcschools_org
     - user: postgres
     - db_user: postgres
-    - db_password: {{ salt['cmd.run']("echo 'U2FsdGVkX18Y9n5ib96QsEjikwizD9Ab9xci6jG+Ha7TlZXgbaLnqpOVGCSTLveq' | openssl enc -d -kfile /saltsecrets -aes-256-cbc -base64",python_shell=True) }}
+    - db_password: {{ salt['cmd.run']("echo 'U2FsdGVkX18Y9n5ib96QsEjikwizD9Ab9xci6jG+Ha7TlZXgbaLnqpOVGCSTLveq' | openssl enc -d -k \"$SALTSECRETS\" -aes-256-cbc -base64",python_shell=True) }}
     - require:
       - sls: postgresserver
 www_slcschools_org_user:
@@ -11,10 +11,10 @@ www_slcschools_org_user:
     - name: www_slcschools_org
     - createdb: True
     - encrypted: True
-    - password: {{ salt['cmd.run']("echo 'U2FsdGVkX19Ex7byp1qb5qX4PDFfFCnHiDL+nvmAHLCO38tIdG8xbGp7hffL0jn+' | openssl enc -d -kfile /saltsecrets -aes-256-cbc -base64",python_shell=True) }}
+    - password: {{ salt['cmd.run']("echo 'U2FsdGVkX19Ex7byp1qb5qX4PDFfFCnHiDL+nvmAHLCO38tIdG8xbGp7hffL0jn+' | openssl enc -d -k \"$SALTSECRETS\" -aes-256-cbc -base64",python_shell=True) }}
     - user: postgres
     - db_user: postgres
-    - db_password: {{ salt['cmd.run']("echo 'U2FsdGVkX18Y9n5ib96QsEjikwizD9Ab9xci6jG+Ha7TlZXgbaLnqpOVGCSTLveq' | openssl enc -d -kfile /saltsecrets -aes-256-cbc -base64",python_shell=True) }}
+    - db_password: {{ salt['cmd.run']("echo 'U2FsdGVkX18Y9n5ib96QsEjikwizD9Ab9xci6jG+Ha7TlZXgbaLnqpOVGCSTLveq' | openssl enc -d -k \"$SALTSECRETS\" -aes-256-cbc -base64",python_shell=True) }}
     - require:
       - postgres_database: www_slcschools_org_database
 www_slcschools_org_priv:
@@ -26,6 +26,12 @@ www_slcschools_org_priv:
       - ALL
     - user: postgres
     - db_user: postgres
-    - db_password: {{ salt['cmd.run']("echo 'U2FsdGVkX18Y9n5ib96QsEjikwizD9Ab9xci6jG+Ha7TlZXgbaLnqpOVGCSTLveq' | openssl enc -d -kfile /saltsecrets -aes-256-cbc -base64",python_shell=True) }}
+    - db_password: {{ salt['cmd.run']("echo 'U2FsdGVkX18Y9n5ib96QsEjikwizD9Ab9xci6jG+Ha7TlZXgbaLnqpOVGCSTLveq' | openssl enc -d -k \"$SALTSECRETS\" -aes-256-cbc -base64",python_shell=True) }}
     - require:
       -  postgres_user: www_slcschools_org_user
+www_slcschools_org_postgresselinuxapplied:
+  selinux.fcontext_policy_applied:
+    - name: /srv/postgres/data
+    - recursive: True
+    - require:
+      - postgres_privileges: www_slcschools_org_priv

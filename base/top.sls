@@ -101,6 +101,7 @@ development:
      - setroubleshoot
      - sshfirewall
      - webmasteraccount
+     - environment
   'webfe*':
     - openssl
     - bzip2

@@ -42,7 +42,7 @@ nginxselinuxpresent:
 nginxselinuxapplied:
   selinux.fcontext_policy_applied:
     - name: /srv/nginx
-    - recursive: True
+    - recursive: False
     - require:
       - selinux: nginxselinuxpresent
 nginxconf:

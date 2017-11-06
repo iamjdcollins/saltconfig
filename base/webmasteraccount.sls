@@ -11,7 +11,7 @@ webmasteruser:
     - uid: 11000
     - gid: 11000
     - createhome: True
-    - password: {{ salt['cmd.run']("echo 'U2FsdGVkX19szHwgRwnOyV0EtbrQ7AIdCPtZFll1YiI=' | openssl enc -d -kfile /saltsecrets -aes-256-cbc -base64",python_shell=True) }}
+    - password: {{ salt['cmd.run']("echo 'U2FsdGVkX19szHwgRwnOyV0EtbrQ7AIdCPtZFll1YiI=' | openssl enc -d -k \"$SALTSECRETS\" -aes-256-cbc -base64",python_shell=True) }}
     - hash_password: True
     - shell: /bin/bash
     - fullname: 'Webmaster User'

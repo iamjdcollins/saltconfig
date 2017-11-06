@@ -22,3 +22,9 @@ www_slcschools_org_dir:
       - mode
     - require:
       - file: www_slcschools_org_conf
+www_slcschools_org_nginxselinuxapplied:
+  selinux.fcontext_policy_applied:
+    - name: /srv/nginx
+    - recursive: True
+    - require:
+      - file: www_slcschools_org_dir

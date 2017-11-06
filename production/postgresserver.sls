@@ -41,14 +41,12 @@ postgresinitdb:
     - name: /srv/postgres/data
     - auth: password
     - user: postgres
-    - password: {{ salt['cmd.run']("echo 'U2FsdGVkX18Y9n5ib96QsEjikwizD9Ab9xci6jG+Ha7TlZXgbaLnqpOVGCSTLveq' | openssl enc -d -kfile /saltsecrets -aes-256-cbc -base64",python_shell=True) }}
+    - password: {{ salt['cmd.run']("echo 'U2FsdGVkX18Y9n5ib96QsEjikwizD9Ab9xci6jG+Ha7TlZXgbaLnqpOVGCSTLveq' | openssl enc -d -k \"$SALTSECRETS\" -aes-256-cbc -base64",python_shell=True) }}
     - encoding: UTF8
     - locale: C
     - runas: postgres
     - require:
       - file: /srv/postgres/data
-    - onlyif: 
-      - 'test -e /saltsecrets'
 postgresservicefile:
   file.managed:
     - name: /usr/lib/systemd/system/postgresql.service
@@ -67,7 +65,7 @@ postgresselinuxpresent:
 postgresselinuxapplied:
   selinux.fcontext_policy_applied:
     - name: /srv/postgres/data
-    - recursive: True
+    - recursive: False
     - require:
       - selinux: postgresselinuxpresent
 postgresservice:
