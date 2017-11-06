@@ -4,4 +4,4 @@ echo -n "Enter the Salt Secret Password: "
 read -s saltsecrets
 echo
 export SALTSECRETS=$saltsecrets
-salt-call --local state.apply saltenv=development --log-file=/srv/salt/log --log-file-level=debug
+salt-call --local state.apply saltenv=development

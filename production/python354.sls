@@ -31,7 +31,7 @@ configurepython354:
       - cmd: extractpython354
 makepython354:
   cmd.run:
-    - name: make && touch makepython354.success
+    - name: make -j$(expr $(nproc) \* 2) && touch makepython354.success
     - cwd: /opt/software/python354/Python-3.5.4
     - onlyif: 'test ! -e /opt/software/python354/Python-3.5.4/makepython354.success'
     - runas: root

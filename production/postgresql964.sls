@@ -31,7 +31,7 @@ configurepostgresql964:
       - cmd: extractpostgresql964
 makepostgresql964:
   cmd.run:
-    - name: make && touch makepostgresql964.success
+    - name: make -j$(expr $(nproc) \* 2) && touch makepostgresql964.success
     - cwd: /opt/software/postgresql964/postgresql-9.6.4
     - onlyif: 'test ! -e /opt/software/postgresql964/postgresql-9.6.4/makepostgresql964.success'
     - runas: root
@@ -54,9 +54,3 @@ ldconfigpostgresql964:
     - reload_modules: True
     - require:
       - cmd: installpostgresql964
-sync_all_postgresql964:
-  module.run:
-    - name: saltutil.sync_all
-    - refresh: True
-    - require:
-      - cmd: ldconfigpostgresql964

@@ -31,7 +31,7 @@ configurenginx1121:
       - cmd: extractnginx1121
 makenginx1121:
   cmd.run:
-    - name: make && touch makenginx1121.success
+    - name: make -j$(expr $(nproc) \* 2) && touch makenginx1121.success
     - cwd: /opt/software/nginx1121/nginx-1.12.1
     - onlyif: 'test ! -e /opt/software//nginx1121/nginx-1.12.1/makenginx1121.success'
     - runas: root
