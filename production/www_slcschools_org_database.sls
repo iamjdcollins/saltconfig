@@ -31,7 +31,7 @@ www_slcschools_org_priv:
       -  postgres_user: www_slcschools_org_user
 www_slcschools_org_postgresselinuxapplied:
   selinux.fcontext_policy_applied:
-    - name: /srv/postgres/data
+    - name: /srv/
     - recursive: True
     - require:
       - postgres_privileges: www_slcschools_org_priv

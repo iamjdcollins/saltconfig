@@ -64,8 +64,8 @@ postgresselinuxpresent:
       - file: postgresservicefile
 postgresselinuxapplied:
   selinux.fcontext_policy_applied:
-    - name: /srv/postgres/data
-    - recursive: False
+    - name: /srv/
+    - recursive: True
     - require:
       - selinux: postgresselinuxpresent
 postgresservice:
