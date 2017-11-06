@@ -53,9 +53,9 @@ ldconfigpostgresql964:
     - runas: root
     - require:
       - cmd: installpostgresql964
-refresh_module_postgresql964:
+sync_all_postgresql964:
   module.run:
-    - name: saltutil.refresh_modules
-    - async: False
+    - name: saltutil.sync_all
+    - refresh: True
     - require:
       - cmd: ldconfigpostgresql964
