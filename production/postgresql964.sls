@@ -51,6 +51,7 @@ ldconfigpostgresql964:
     - cwd: /opt/software/postgresql964/postgresql-9.6.4
     - onlyif: 'test ! -e /opt/software/postgresql964/postgresql-9.6.4/ldconfigpostgresql964.success'
     - runas: root
+    - reload_modules: True
     - require:
       - cmd: installpostgresql964
 sync_all_postgresql964:
