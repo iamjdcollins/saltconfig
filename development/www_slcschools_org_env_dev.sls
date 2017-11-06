@@ -9,7 +9,7 @@ www_slcschools_org_env_dev_django_settings_module:
 www_slcschools_org_env_dev_www_secret_key:
   file.replace:
     - name: /etc/environment
-    - repl: "WWW_SECRET_KEY=\"{{ salt['cmd.run']("echo 'U2FsdGVkX1/G1kqiSg2WhtCFOUmIItjaGc2Wk1TIIbjOSJPpcS4Stb0o8I4efGQK\r\nrbwP2GMLm3n8EPKCo4wpEIV7Y7ulcg4p9wx8xT8faiY=' | openssl enc -d -pass pass:\"$SALTSECRETS\" -aes-256-cbc -base64 | sed 's|^|        |g'",python_shell=True) }}\""
+    - repl: "WWW_SECRET_KEY=\"{{ salt['cmd.run']("echo 'U2FsdGVkX1/G1kqiSg2WhtCFOUmIItjaGc2Wk1TIIbjOSJPpcS4Stb0o8I4efGQK\r\nrbwP2GMLm3n8EPKCo4wpEIV7Y7ulcg4p9wx8xT8faiY=' | openssl enc -d -pass pass:\"$SALTSECRETS\" -aes-256-cbc -base64",python_shell=True) }}\""
     - pattern: 'WWW_SECRET_KEY.*'
     - append_if_not_found: True
     - require:
@@ -65,7 +65,7 @@ www_slcschools_org_env_dev_slcsd_ldap_user:
 www_slcschools_org_env_dev_slcsd_ldap_password:
   file.replace:
     - name: /etc/environment
-    - repl: "SLCSD_LDAP_PASSWORD=\"{{ salt['cmd.run']("echo 'U2FsdGVkX19E75T5gzL3gfx9NORCLcTTAxM63N9fwxZe/CoOO7HKY5t1Zq5Umnxn\r\nLOdXd2DVNqov0tu5rWGF1g==' | openssl enc -d -k \"$SALTSECRETS\" -aes-256-cbc -base64 | sed 's|^|        |g'",python_shell=True) }}\""
+    - repl: "SLCSD_LDAP_PASSWORD=\"{{ salt['cmd.run']("echo 'U2FsdGVkX19E75T5gzL3gfx9NORCLcTTAxM63N9fwxZe/CoOO7HKY5t1Zq5Umnxn\r\nLOdXd2DVNqov0tu5rWGF1g==' | openssl enc -d -k \"$SALTSECRETS\" -aes-256-cbc -base64",python_shell=True) }}\""
     - pattern: 'SLCSD_LDAP_PASSWORD.*'
     - append_if_not_found: True
     - require:
