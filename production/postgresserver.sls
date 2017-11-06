@@ -71,7 +71,8 @@ postgresselinuxapplied:
     - require:
       - selinux: postgresselinuxpresent
 postgresservice:
-  service.enabled:
+  service.running:
     - name: postgresql.service
+    - enable: True
     - require:
       - selinux: postgresselinuxapplied
