@@ -9,6 +9,7 @@ production:
      - setroubleshoot
      - sshfirewall
      - webmasteraccount
+     - environment
   'webfe*':
     - openssl
     - bzip2
@@ -64,6 +65,7 @@ test:
      - setroubleshoot
      - sshfirewall
      - webmasteraccount
+     - environment
   'webfe*':
     - openssl
     - bzip2
