@@ -1,6 +1,6 @@
 www_slcschools_org_app_dev:
   git.latest:
-    - name: https://github.com/iamjdcollins/www_slcschools_org.git
+    - name: https://github.com/iamjdcollins/districtwebsite.git
     - target: /srv/django/www_slcschools_org
     - user: webmaster
     - rev: development
