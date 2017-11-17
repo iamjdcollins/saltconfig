@@ -3,6 +3,9 @@ memcachedgroup:
     - name: memcached
     - gid: 10002
     - system: True
+    - addusers:
+      - webmaster
+      - nginx
     - require:
       - sls: memcached152
 memcacheduser:
@@ -22,7 +25,7 @@ memcachedrundir:
   file.directory:
     - name: /var/run/memcached
     - user: memcached
-    - group: memcached
+    - group: memcached 
     - mode: 770
     - makedirs: True
     - require:
