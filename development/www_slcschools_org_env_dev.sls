@@ -57,7 +57,7 @@ www_slcschools_org_env_dev_www_db_port:
 www_slcschools_org_env_dev_slcsd_ldap_user:
   file.replace:
     - name: /etc/environment
-    - repl: "SLCSD_LDAP_USER=\"{{ salt['cmd.run']("echo 'U2FsdGVkX1+GuFlZmN46/6+Gm8j5k3eDNkfuRU9nqX2aMwAvcj5JM7ljlRz++YpB' | openssl enc -d -k \"$SALTSECRETS\" -aes-256-cbc -base64",python_shell=True) }}\""
+    - repl: "SLCSD_LDAP_USER=\"{{ salt['cmd.run']("echo 'U2FsdGVkX1/foVQnL7KeLlU6V7YX6AH2bPcIM7JFQhni8gRcHJMIOARHQ+Hp6KZ6' | openssl enc -d -k \"$SALTSECRETS\" -aes-256-cbc -base64",python_shell=True) }}\""
     - pattern: 'SLCSD_LDAP_USER.*'
     - append_if_not_found: True
     - require:
