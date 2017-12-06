@@ -3,6 +3,8 @@ nginxgroup:
     - name: nginx
     - gid: 10001
     - system: True
+    - addusers:
+      - webmaster
     - require:
       - sls: nginx1121
 nginxuser:
