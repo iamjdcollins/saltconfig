@@ -20,9 +20,24 @@ production:
     - readline
     - xmlsec1
     - libevent
+    - cmake3
+    - freetype-devel
+    - fontconfig-devel
+    - openjpeg2-devel
+    - libjpeg-turbo-devel
+    - libpng-devel
+    - libtiff-devel
+    - ghostscript-devel
+    - pulseaudio-libs-devel
+    - tesseract
+    - sox-devel
     - nodejs
     - python2-pip
     - python354
+    - antiword037
+    - poppler0620
+    - popplerdata048
+    - pstotext19
     - pipvirtualenv3
     - postgresql964
     - nginx1121
@@ -76,9 +91,24 @@ test:
     - readline
     - xmlsec1
     - libevent
+    - cmake3
+    - freetype-devel
+    - fontconfig-devel
+    - openjpeg2-devel
+    - libjpeg-turbo-devel
+    - libpng-devel
+    - libtiff-devel
+    - ghostscript-devel
+    - pulseaudio-libs-devel
+    - tesseract
+    - sox-devel
     - nodejs
     - python2-pip
     - python354
+    - antiword037
+    - poppler0620
+    - popplerdata048
+    - pstotext19
     - pipvirtualenv3
     - postgresql964
     - nginx1121
@@ -114,9 +144,24 @@ development:
     - readline
     - xmlsec1
     - libevent
+    - cmake3
+    - freetype-devel
+    - fontconfig-devel
+    - openjpeg2-devel
+    - libjpeg-turbo-devel
+    - libpng-devel
+    - libtiff-devel
+    - ghostscript-devel
+    - pulseaudio-libs-devel
+    - tesseract
+    - sox-devel
     - nodejs
     - python2-pip
     - python354
+    - antiword037
+    - poppler0620
+    - popplerdata048
+    - pstotext19
     - pipvirtualenv3
     - postgresql964
     - nginx1121
