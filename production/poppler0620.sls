@@ -30,7 +30,7 @@ mkpopplerbuilddir:
       - cmd: extractpoppler0620
 configurepoppler0620:
   cmd.run:
-    - name: cmake3 .. -DCMAKE_INSTALL_PREFIX=/usr/local && touch configurepoppler0620.success
+    - name: cmake3 .. -DCMAKE_INSTALL_PREFIX=/usr && touch configurepoppler0620.success
     - cwd: /opt/software/poppler0620/poppler-0.62.0/build
     - onlyif: 'test ! -e /opt/software/poppler0620/poppler-0.62.0/build/configurepoppler0620.success'
     - runas: root
