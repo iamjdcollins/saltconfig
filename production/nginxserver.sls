@@ -22,10 +22,51 @@ nginxuser:
   file.directory:
     - user: nginx
     - group: nginx
-    - mode: 755
+    - dir_mode: 775
+    - file_mode: 664
+    - recurse:
+      - user
+      - group
+      - mode
     - makedirs: True
     - require:
       - user: nginxuser
+nginx_defaultgroupacl:
+  acl.present:
+    - name: /srv/nginx
+    - acl_type: d:g
+    - acl_name: nginx
+    - perms: rwx
+    - recurse: True
+    - require:
+      - file: /srv/nginx
+nginx_defaultuseracl:
+  acl.present:
+    - name: /srv/nginx
+    - acl_type: d:u
+    - acl_name: nginx
+    - perms: rwx
+    - recurse: True
+    - require:
+      - acl: nginx_defaultgroupacl
+nginx_groupacl:
+  acl.present:
+    - name: /srv/nginx
+    - acl_type: group
+    - acl_name: nginx
+    - perms: rwx
+    - recurse: True
+    - require:
+      - acl: nginx_defaultuseracl
+nginx_useracl:
+  acl.present:
+    - name: /srv/nginx
+    - acl_type: user
+    - acl_name: nginx
+    - perms: rwx
+    - recurse: True
+    - require:
+      - acl: nginx_groupacl
 nginxservicefile:
   file.managed:
     - name: /usr/lib/systemd/system/nginx.service
@@ -34,7 +75,7 @@ nginxservicefile:
     - group: root
     - mode: 644
     - require:
-      - file: /srv/nginx
+      - acl: nginx_useracl
 nginxselinuxpresent:
   selinux.fcontext_policy_present:
     - name: /srv/nginx(/.*)?
