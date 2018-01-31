@@ -32,6 +32,7 @@ production:
     - tesseract
     - sox-devel
     - nodejs
+    - yuglify
     - python2-pip
     - python354
     - antiword037
@@ -64,6 +65,7 @@ production:
     - xmlsec1
     - libevent
     - nodejs
+    - yuglify
     - python2-pip
     - python354
     - pipvirtualenv3
@@ -103,6 +105,7 @@ test:
     - tesseract
     - sox-devel
     - nodejs
+    - yuglify
     - python2-pip
     - python354
     - antiword037
@@ -156,6 +159,7 @@ development:
     - tesseract
     - sox-devel
     - nodejs
+    - yuglify
     - python2-pip
     - python354
     - antiword037
