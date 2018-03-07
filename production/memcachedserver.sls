@@ -69,8 +69,15 @@ memcachedselinuxapplied:
     - recursive: True
     - require:
       - selinux: memcachedselinuxpresent
+memcachedtmpfiles:
+  file.managed:
+    - name: /usr/lib/tmpfiles.d/memcached.conf
+    - source: /srv/salt/files/tmpfiles.d/memcached.conf
+    - replace: True
+    - require:
+      - selinux: memcachedselinuxapplied
 memcachedservice:
   service.enabled:
     - name: memcached.service
     - require:
-      - selinux: memcachedselinuxapplied
+      - file: memcachedtmpfiles

@@ -11,3 +11,10 @@ gunicornrundirectory:
       - mode
     - require:
       - sls: nginxserver
+gunicorntmpfiles:
+  file.managed:
+    - name: /usr/lib/tmpfiles.d/gunicorn.conf
+    - source: /srv/salt/files/tmpfiles.d/gunicorn.conf
+    - replace: True
+    - require:
+      - file: gunicornrundirectory

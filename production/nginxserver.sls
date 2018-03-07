@@ -100,8 +100,15 @@ nginxsiteenabled:
     - name: /etc/nginx/sites-enabled
     - require:
       - file: nginxconf
+nginxtmpfiles:
+  file.managed:
+    - name: /usr/lib/tmpfiles.d/nginx.conf
+    - source: /srv/salt/files/tmpfiles.d/nginx.conf
+    - replace: True
+    - require:
+      - file: nginxsiteenabled
 nginxservice:
   service.enabled:
     - name: nginx.service
     - require:
-      - file: nginxsiteenabled
+      - file: nginxtmpfiles
