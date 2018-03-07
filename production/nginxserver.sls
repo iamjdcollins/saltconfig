@@ -100,13 +100,26 @@ nginxsiteenabled:
     - name: /etc/nginx/sites-enabled
     - require:
       - file: nginxconf
+nginxrundirectory:
+  file.directory:
+    - name: /run/nginx
+    - user: nginx
+    - group: nginx
+    - dir_mode: 770
+    - file_mode: 660
+    - recurse:
+      - user
+      - group
+      - mode
+    - require:
+      - file: nginxsiteenabled
 nginxtmpfiles:
   file.managed:
     - name: /usr/lib/tmpfiles.d/nginx.conf
     - source: /srv/salt/files/tmpfiles.d/nginx.conf
     - replace: True
     - require:
-      - file: nginxsiteenabled
+      - file: nginxrundirectory
 nginxservice:
   service.enabled:
     - name: nginx.service
