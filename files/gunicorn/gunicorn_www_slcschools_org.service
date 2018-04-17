@@ -9,7 +9,7 @@ Group=nginx
 WorkingDirectory=/srv/django/www_slcschools_org
 EnvironmentFile=/etc/environment
 Environment="PATH=/srv/virtualenv/www_slcschools_org/bin/"
-ExecStart=/srv/virtualenv/www_slcschools_org/bin/gunicorn --name www_slcschools_org --worker-class gevent --workers 5 --pid /run/gunicorn/gunicorn_www_slcschools_org.pid --bind unix:/run/gunicorn/gunicorn_www_slcschools_org.sock config.wsgi
+ExecStart=/srv/virtualenv/www_slcschools_org/bin/gunicorn --name www_slcschools_org --worker-class gevent --workers 5 --timeout 600 --pid /run/gunicorn/gunicorn_www_slcschools_org.pid --bind unix:/run/gunicorn/gunicorn_www_slcschools_org.sock config.wsgi
 ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/kill -s TERM $MAINPID
 PrivateTmp=true
