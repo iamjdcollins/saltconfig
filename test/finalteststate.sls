@@ -1,4 +1,4 @@
-nclude:
+include:
   - reloadsystemd
   - restartpostgresserver
   - restartmemcachedserver
