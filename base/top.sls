@@ -108,6 +108,10 @@ test:
     - yuglify
     - python2-pip
     - python354
+    - php
+    - mariadb
+    - mariadbserver
+    - revslider
     - antiword037
     - poppler0620
     - popplerdata048
@@ -162,6 +166,10 @@ development:
     - yuglify
     - python2-pip
     - python354
+    - php
+    - mariadb
+    - mariadbserver
+    - revslider
     - antiword037
     - poppler0620
     - popplerdata048
