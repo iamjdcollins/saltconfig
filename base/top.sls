@@ -51,6 +51,43 @@ production:
     - memcachedserver
     - www_slcschools_org_gunicorn
     - websites_slcschools_org_nginx
+    - backman_slcschools_org_nginx
+    - beaconheights_slcschools_org_nginx
+    - bennion_slcschools_org_nginx
+    - bonneville_slcschools_org_nginx
+    - bryant_slcschools_org_nginx
+    - clayton_slcschools_org_nginx
+    - dilworth_slcschools_org_nginx
+    - east_slcschools_org_nginx
+    - edison_slcschools_org_nginx
+    - emerson_slcschools_org_nginx
+    - ensign_slcschools_org_nginx
+    - escalante_slcschools_org_nginx
+    - franklin_slcschools_org_nginx
+    - glendale_slcschools_org_nginx
+    - hawthorne_slcschools_org_nginx
+    - highlandpark_slcschools_org_nginx
+    - highland_slcschools_org_nginx
+    - hillside_slcschools_org_nginx
+    - horizonte_slcschools_org_nginx
+    - indianhills_slcschools_org_nginx
+    - innovations_slcschools_org_nginx
+    - jackson_slcschools_org_nginx
+    - liberty_slcschools_org_nginx
+    - meadowlark_slcschools_org_nginx
+    - mountainview_slcschools_org_nginx
+    - newman_slcschools_org_nginx
+    - nibleypark_slcschools_org_nginx
+    - northstar_slcschools_org_nginx
+    - northwest_slcschools_org_nginx
+    - parkview_slcschools_org_nginx
+    - riley_slcschools_org_nginx
+    - rosepark_slcschools_org_nginx
+    - uintah_slcschools_org_nginx
+    - wasatch_slcschools_org_nginx
+    - washington_slcschools_org_nginx
+    - west_slcschools_org_nginx
+    - whittier_slcschools_org_nginx
     - www_slcschools_org_nginx
     - www_slcschools_org_env_prod
     - www_slcschools_org_app_prod
@@ -131,6 +168,43 @@ test:
     - www_slcschools_org_database
     - www_slcschools_org_gunicorn
     - websites_slcschools_org_nginx
+    - backman_slcschools_org_nginx
+    - beaconheights_slcschools_org_nginx
+    - bennion_slcschools_org_nginx
+    - bonneville_slcschools_org_nginx
+    - bryant_slcschools_org_nginx
+    - clayton_slcschools_org_nginx
+    - dilworth_slcschools_org_nginx
+    - east_slcschools_org_nginx
+    - edison_slcschools_org_nginx
+    - emerson_slcschools_org_nginx
+    - ensign_slcschools_org_nginx
+    - escalante_slcschools_org_nginx
+    - franklin_slcschools_org_nginx
+    - glendale_slcschools_org_nginx
+    - hawthorne_slcschools_org_nginx
+    - highlandpark_slcschools_org_nginx
+    - highland_slcschools_org_nginx
+    - hillside_slcschools_org_nginx
+    - horizonte_slcschools_org_nginx
+    - indianhills_slcschools_org_nginx
+    - innovations_slcschools_org_nginx
+    - jackson_slcschools_org_nginx
+    - liberty_slcschools_org_nginx
+    - meadowlark_slcschools_org_nginx
+    - mountainview_slcschools_org_nginx
+    - newman_slcschools_org_nginx
+    - nibleypark_slcschools_org_nginx
+    - northstar_slcschools_org_nginx
+    - northwest_slcschools_org_nginx
+    - parkview_slcschools_org_nginx
+    - riley_slcschools_org_nginx
+    - rosepark_slcschools_org_nginx
+    - uintah_slcschools_org_nginx
+    - wasatch_slcschools_org_nginx
+    - washington_slcschools_org_nginx
+    - west_slcschools_org_nginx
+    - whittier_slcschools_org_nginx
     - www_slcschools_org_nginx
     - www_slcschools_org_env_test
     - www_slcschools_org_app_test
@@ -190,6 +264,43 @@ development:
     - www_slcschools_org_database
     - www_slcschools_org_gunicorn
     - websites_slcschools_org_nginx
+    - backman_slcschools_org_nginx
+    - beaconheights_slcschools_org_nginx
+    - bennion_slcschools_org_nginx
+    - bonneville_slcschools_org_nginx
+    - bryant_slcschools_org_nginx
+    - clayton_slcschools_org_nginx
+    - dilworth_slcschools_org_nginx
+    - east_slcschools_org_nginx
+    - edison_slcschools_org_nginx
+    - emerson_slcschools_org_nginx
+    - ensign_slcschools_org_nginx
+    - escalante_slcschools_org_nginx
+    - franklin_slcschools_org_nginx
+    - glendale_slcschools_org_nginx
+    - hawthorne_slcschools_org_nginx
+    - highlandpark_slcschools_org_nginx
+    - highland_slcschools_org_nginx
+    - hillside_slcschools_org_nginx
+    - horizonte_slcschools_org_nginx
+    - indianhills_slcschools_org_nginx
+    - innovations_slcschools_org_nginx
+    - jackson_slcschools_org_nginx
+    - liberty_slcschools_org_nginx
+    - meadowlark_slcschools_org_nginx
+    - mountainview_slcschools_org_nginx
+    - newman_slcschools_org_nginx
+    - nibleypark_slcschools_org_nginx
+    - northstar_slcschools_org_nginx
+    - northwest_slcschools_org_nginx
+    - parkview_slcschools_org_nginx
+    - riley_slcschools_org_nginx
+    - rosepark_slcschools_org_nginx
+    - uintah_slcschools_org_nginx
+    - wasatch_slcschools_org_nginx
+    - washington_slcschools_org_nginx
+    - west_slcschools_org_nginx
+    - whittier_slcschools_org_nginx
     - www_slcschools_org_nginx
     - www_slcschools_org_env_dev
     - www_slcschools_org_app_dev
