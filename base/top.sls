@@ -50,6 +50,7 @@ production:
     - gunicornserver
     - memcachedserver
     - www_slcschools_org_gunicorn
+    - websites_slcschools_org_nginx
     - www_slcschools_org_nginx
     - www_slcschools_org_env_prod
     - www_slcschools_org_app_prod
@@ -129,6 +130,7 @@ test:
     - memcachedserver
     - www_slcschools_org_database
     - www_slcschools_org_gunicorn
+    - websites_slcschools_org_nginx
     - www_slcschools_org_nginx
     - www_slcschools_org_env_test
     - www_slcschools_org_app_test
@@ -187,6 +189,7 @@ development:
     - memcachedserver
     - www_slcschools_org_database
     - www_slcschools_org_gunicorn
+    - websites_slcschools_org_nginx
     - www_slcschools_org_nginx
     - www_slcschools_org_env_dev
     - www_slcschools_org_app_dev

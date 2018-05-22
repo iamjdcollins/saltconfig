@@ -1,17 +1,14 @@
-include:
-  - slcschools_org_cert
-
 www_slcschools_org_conf:
   file.managed:
     - name: /etc/nginx/sites-enabled/www.slcschools.org.conf
     - source: /etc/nginx/sites-enabled/www.slcschools.org.conf
     - replace: True
     - require:
-      - sls: www_slcschools_org_gunicorn
-      - sls: slcschools_org_cert
-www_slcschools_org_dir:
+      - sls: websites_slcschools_org_nginx
+      - sls: revslider
+www_slcschools_org_revslider_dir:
   file.directory:
-    - name: /srv/nginx/www.slcschools.org
+    - name: /srv/nginx/revslider/www.slcschools.org
     - user: nginx
     - group: nginx 
     - dir_mode: 775
@@ -27,41 +24,4 @@ www_slcschools_org_nginxselinuxapplied:
     - name: /srv/
     - recursive: True
     - require:
-      - file: www_slcschools_org_dir
-www_slcschools_org_defaultgroupacl:
-  acl.present:
-    - name: /srv/nginx/www.slcschools.org
-    - acl_type: d:g
-    - acl_name: nginx
-    - perms: rwx
-    - recurse: True
-    - require:
-      - selinux: www_slcschools_org_nginxselinuxapplied
-www_slcschools_org_defaultuseracl:
-  acl.present:
-    - name: /srv/nginx/www.slcschools.org
-    - acl_type: d:u
-    - acl_name: nginx
-    - perms: rwx
-    - recurse: True
-    - require:
-      - acl: www_slcschools_org_defaultgroupacl
-www_slcschools_org_groupacl:
-  acl.present:
-    - name: /srv/nginx/www.slcschools.org
-    - acl_type: group
-    - acl_name: nginx
-    - perms: rwx
-    - recurse: True
-    - require:
-      - acl: www_slcschools_org_defaultuseracl
-www_slcschools_org_useracl:
-  acl.present:
-    - name: /srv/nginx/www.slcschools.org
-    - acl_type: user
-    - acl_name: nginx
-    - perms: rwx
-    - recurse: True
-    - require:
-      - acl: www_slcschools_org_groupacl
-
+      - file: www_slcschools_org_revslider_dir
