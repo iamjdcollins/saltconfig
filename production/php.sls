@@ -17,7 +17,7 @@ php-fpm:
 phpini:
   file.managed:
     - name: /etc/php.ini
-    - source: /srv/salt/files/php/php.ini
+    - source: /srv/salt/files/etc/php.ini
     - user: root
     - group: root
     - mode: 644
@@ -26,7 +26,7 @@ phpini:
 phpfpmwwwconf:
   file.managed:
     - name: /etc/php-fpm.d/www.conf
-    - source: /srv/salt/files/php/www.conf
+    - source: /srv/salt/files/etc/php-fpm.d/www.conf
     - user: root
     - group: root
     - mode: 644

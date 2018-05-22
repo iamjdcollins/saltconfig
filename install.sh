@@ -4,4 +4,4 @@ if [ "$(pwd)" != '/srv/salt' ]; then
   exit 1;
 fi
 curl --silent --location https://bootstrap.saltstack.com | sudo bash -
-cp -f files/salt/minion /etc/salt/minion
+cp -f files/etc/salt/minion /etc/salt/minion

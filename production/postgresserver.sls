@@ -50,7 +50,7 @@ postgresinitdb:
 postgresservicefile:
   file.managed:
     - name: /usr/lib/systemd/system/postgresql.service
-    - source: /srv/salt/files/postgres/postgresql.service
+    - source: /srv/salt/files/usr/lib/systemd/system/postgresql.service
     - user: root
     - group: root
     - mode: 644

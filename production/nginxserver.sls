@@ -70,7 +70,7 @@ nginx_useracl:
 nginxservicefile:
   file.managed:
     - name: /usr/lib/systemd/system/nginx.service
-    - source: /srv/salt/files/nginx/nginx.service
+    - source: /srv/salt/files/usr/lib/systemd/system/nginx.service
     - user: root
     - group: root
     - mode: 644
@@ -91,7 +91,7 @@ nginxselinuxapplied:
 nginxconf:
   file.managed:
     - name: /etc/nginx/nginx.conf
-    - source: /srv/salt/files/nginx/nginx.conf
+    - source: /srv/salt/files/etc/nginx/nginx.conf
     - replace: True
     - require:
       - selinux: nginxselinuxapplied
@@ -116,7 +116,7 @@ nginxrundirectory:
 nginxtmpfiles:
   file.managed:
     - name: /usr/lib/tmpfiles.d/nginx.conf
-    - source: /srv/salt/files/tmpfiles.d/nginx.conf
+    - source: /srv/salt/files/usr/lib/tmpfiles.d/nginx.conf
     - replace: True
     - require:
       - file: nginxrundirectory

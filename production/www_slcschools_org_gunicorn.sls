@@ -1,7 +1,7 @@
 www_slcschools_org_gunicorn_service:
   file.managed:
     - name: /usr/lib/systemd/system/gunicorn_www_slcschools_org.service
-    - source: /srv/salt/files/gunicorn/gunicorn_www_slcschools_org.service
+    - source: /srv/salt/files/usr/lib/systemd/system/gunicorn_www_slcschools_org.service
     - replace: True
     - require:
       - sls: gunicornserver

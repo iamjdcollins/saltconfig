@@ -42,7 +42,7 @@ memcachedconfigdir:
 memcachedconfigfile:
   file.managed:
     - name: /etc/memcached/memcached.conf
-    - source: /srv/salt/files/memcached/memcached.conf
+    - source: /srv/salt/files/etc/memcached/memcached.conf
     - user: root
     - group: root
     - mode: 644
@@ -51,7 +51,7 @@ memcachedconfigfile:
 memcachedservicefile:
   file.managed:
     - name: /usr/lib/systemd/system/memcached.service
-    - source: /srv/salt/files/memcached/memcached.service
+    - source: /srv/salt/files/usr/lib/systemd/system/memcached.service
     - user: root
     - group: root
     - mode: 644
@@ -72,7 +72,7 @@ memcachedselinuxapplied:
 memcachedtmpfiles:
   file.managed:
     - name: /usr/lib/tmpfiles.d/memcached.conf
-    - source: /srv/salt/files/tmpfiles.d/memcached.conf
+    - source: /srv/salt/files/usr/lib/tmpfiles.d/memcached.conf
     - replace: True
     - require:
       - selinux: memcachedselinuxapplied

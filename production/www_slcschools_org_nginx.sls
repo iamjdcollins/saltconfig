@@ -4,7 +4,7 @@ include:
 www_slcschools_org_conf:
   file.managed:
     - name: /etc/nginx/sites-enabled/www.slcschools.org.conf
-    - source: /srv/salt/files/nginx/www.slcschools.org.conf
+    - source: /etc/nginx/sites-enabled/www.slcschools.org.conf
     - replace: True
     - require:
       - sls: www_slcschools_org_gunicorn

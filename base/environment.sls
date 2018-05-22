@@ -17,5 +17,5 @@ profile_export_enviroment:
 environment_file:
   file.managed:
     - name: /etc/environment
-    - source: /srv/salt/files/environment/environment
+    - source: /srv/salt/files/etc/environment
     - replace: False 

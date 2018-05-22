@@ -5,7 +5,7 @@ mariadb-server:
 mariadbmycnf:
   file.managed:
     - name: /etc/my.cnf
-    - source: /srv/salt/files/mariadb/my.cnf
+    - source: /srv/salt/files/etc/my.cnf
     - user: root
     - group: root
     - mode: 644

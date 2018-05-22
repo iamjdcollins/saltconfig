@@ -1,14 +1,14 @@
 slcschoolscrt:
   file.managed:
     - name: /etc/pki/tls/certs/star_slcschools_org.crt
-    - source: /srv/salt/files/nginx/star_slcschools_org.crt
+    - source: /srv/salt/files/etc/pki/tls/certs/star_slcschools_org.crt
     - replace: True
     - require:
       - sls: nginxserver
 slcschoolskeytemplate:
   file.managed:
     - name: /etc/pki/tls/private/star_slcschools_org.key
-    - source: /srv/salt/files/nginx/star_slcschools_org.key
+    - source: /srv/salt/files/etc/pki/tls/private/star_slcschools_org.key
     - replace: False
 slcschoolskeycontents:
   file.blockreplace:
@@ -21,5 +21,5 @@ slcschoolskeycontents:
 digicertchain:
   file.managed:
     - name: /etc/pki/ca-trust/source/anchors/DigiCertCA.crt
-    - source: /srv/salt/files/nginx/DigiCertCA.crt
+    - source: /srv/salt/files/etc/pki/ca-trust/source/anchors/DigiCertCA.crt
     - replace: True
