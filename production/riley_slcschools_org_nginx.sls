@@ -1,7 +1,7 @@
 riley_slcschools_org_conf:
   file.managed:
     - name: /etc/nginx/sites-enabled/riley.slcschools.org.conf
-    - source: /etc/nginx/sites-enabled/riley.slcschools.org.conf
+    - source: /srv/salt/files/etc/nginx/sites-enabled/riley.slcschools.org.conf
     - replace: True
     - require:
       - sls: websites_slcschools_org_nginx

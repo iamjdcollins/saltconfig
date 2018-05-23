@@ -72,7 +72,7 @@ production:
     - horizonte_slcschools_org_nginx
     - indianhills_slcschools_org_nginx
     - innovations_slcschools_org_nginx
-    - jackson_slcschools_org_nginx
+    - marywjackson_slcschools_org_nginx
     - liberty_slcschools_org_nginx
     - meadowlark_slcschools_org_nginx
     - mountainview_slcschools_org_nginx
@@ -189,7 +189,7 @@ test:
     - horizonte_slcschools_org_nginx
     - indianhills_slcschools_org_nginx
     - innovations_slcschools_org_nginx
-    - jackson_slcschools_org_nginx
+    - marywjackson_slcschools_org_nginx
     - liberty_slcschools_org_nginx
     - meadowlark_slcschools_org_nginx
     - mountainview_slcschools_org_nginx
@@ -285,7 +285,7 @@ development:
     - horizonte_slcschools_org_nginx
     - indianhills_slcschools_org_nginx
     - innovations_slcschools_org_nginx
-    - jackson_slcschools_org_nginx
+    - marywjackson_slcschools_org_nginx
     - liberty_slcschools_org_nginx
     - meadowlark_slcschools_org_nginx
     - mountainview_slcschools_org_nginx
