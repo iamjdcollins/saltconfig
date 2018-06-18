@@ -107,6 +107,11 @@ nginxdefaultconf:
     - replace: True
     - require:
       - file: nginxsiteenabled
+nginxrewrites:
+  file.directory:
+    - name: /etc/nginx/rewrites
+    - require:
+      - file: nginxdefaultconf
 nginxrundirectory:
   file.directory:
     - name: /run/nginx
@@ -119,7 +124,7 @@ nginxrundirectory:
       - group
       - mode
     - require:
-      - file: nginxdefaultconf
+      - file: nginxrewrites
 nginxtmpfiles:
   file.managed:
     - name: /usr/lib/tmpfiles.d/nginx.conf

@@ -6,6 +6,13 @@ www_slcschools_org_conf:
     - require:
       - sls: websites_slcschools_org_nginx
       - sls: revslider
+www_slcschools_org_rewrite_sendfiles:
+  file.managed:
+    - name: /etc/nginx/rewrites/www.slcschools.org.rewrite.sendfiles
+    - source: /srv/salt/files/etc/nginx/rewrites/www.slcschools.org.rewrite.sendfiles
+    - replace: True
+    - require:
+      - file: www_slcschools_org_conf
 www_slcschools_org_revslider_dir:
   file.directory:
     - name: /srv/nginx/revslider/www.slcschools.org
@@ -18,7 +25,7 @@ www_slcschools_org_revslider_dir:
       - group
       - mode
     - require:
-      - file: www_slcschools_org_conf
+      - file: www_slcschools_org_rewrite_sendfiles
 www_slcschools_org_nginxselinuxapplied:
   selinux.fcontext_policy_applied:
     - name: /srv/
