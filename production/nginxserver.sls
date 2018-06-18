@@ -106,7 +106,7 @@ nginxdefaultconf:
     - source: /srv/salt/files/etc/nginx/sites-enabled/default.conf
     - replace: True
     - require:
-      - selinux: nginxsiteenabled
+      - file: nginxsiteenabled
 nginxrundirectory:
   file.directory:
     - name: /run/nginx
