@@ -35,6 +35,9 @@ production:
     - yuglify
     - python2-pip
     - python354
+    - php
+    - mariadb
+    - revslider
     - antiword037
     - poppler0620
     - popplerdata048

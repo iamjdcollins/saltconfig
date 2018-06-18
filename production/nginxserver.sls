@@ -100,6 +100,13 @@ nginxsiteenabled:
     - name: /etc/nginx/sites-enabled
     - require:
       - file: nginxconf
+nginxdefaultconf:
+  file.managed:
+    - name: /etc/nginx/sites-enabled/default.conf
+    - source: /srv/salt/files/etc/nginx/sites-enabled/default.conf
+    - replace: True
+    - require:
+      - selinux: nginxsiteenabled
 nginxrundirectory:
   file.directory:
     - name: /run/nginx
@@ -112,7 +119,7 @@ nginxrundirectory:
       - group
       - mode
     - require:
-      - file: nginxsiteenabled
+      - file: nginxdefaultconf
 nginxtmpfiles:
   file.managed:
     - name: /usr/lib/tmpfiles.d/nginx.conf
